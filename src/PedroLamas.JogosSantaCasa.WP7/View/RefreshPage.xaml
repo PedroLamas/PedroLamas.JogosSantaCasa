@@ -1,0 +1,59 @@
+﻿<phone:PhoneApplicationPage x:Class="PedroLamas.JogosSantaCasa.View.RefreshPage"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                            xmlns:frameworkBehaviors="clr-namespace:Cimbalino.Phone.Toolkit.Behaviors;assembly=Cimbalino.Phone.Toolkit"
+                            xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+                            xmlns:localHelpers="clr-namespace:PedroLamas.JogosSantaCasa.Helpers"
+                            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                            xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+                            xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+                            DataContext="{Binding Refresh,
+                                                  Source={StaticResource Locator}}"
+                            FontFamily="{StaticResource PhoneFontFamilyNormal}"
+                            FontSize="{StaticResource PhoneFontSizeNormal}"
+                            Foreground="{StaticResource PhoneForegroundBrush}"
+                            Orientation="Portrait"
+                            Style="{StaticResource PhoneApplicationPageStyle}"
+                            SupportedOrientations="Portrait"
+                            d:DesignHeight="768"
+                            d:DesignWidth="480"
+                            shell:SystemTray.IsVisible="True"
+                            mc:Ignorable="d">
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <localHelpers:EventToCommand Command="{Binding RefreshCommand, Mode=OneTime}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <i:Interaction.Behaviors>
+        <frameworkBehaviors:ApplicationBarBehavior Opacity="0">
+            <frameworkBehaviors:ApplicationBarIconButton Command="{Binding RefreshCommand,
+                                                                           Mode=OneTime}"
+                                                         IconUri="/Images/appbar.refresh.rest.png"
+                                                         Text="refrescar" />
+        </frameworkBehaviors:ApplicationBarBehavior>
+    </i:Interaction.Behaviors>
+
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush AlignmentY="Top"
+                        ImageSource="/Images/RefreshPageBackground.jpg"
+                        Stretch="None" />
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid x:Name="ContentPanel"
+              Grid.Row="1"
+              Margin="12,0,12,0">
+            <TextBlock VerticalAlignment="Center"
+                       Style="{StaticResource PhoneTextTitle2Style}"
+                       Text="{Binding StatusText}"
+                       TextAlignment="Center"
+                       TextWrapping="Wrap" />
+        </Grid>
+    </Grid>
+</phone:PhoneApplicationPage>

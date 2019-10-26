@@ -1,0 +1,74 @@
+﻿<phone:PhoneApplicationPage x:Class="PedroLamas.JogosSantaCasa.View.BettingPage"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:cimbalinoBehaviors="clr-namespace:Cimbalino.Phone.Toolkit.Behaviors;assembly=Cimbalino.Phone.Toolkit"
+                            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                            xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+                            xmlns:localControls="clr-namespace:PedroLamas.JogosSantaCasa.Controls"
+                            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                            xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+                            xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+                            DataContext="{Binding Betting,
+                                                  Source={StaticResource Locator}}"
+                            FontFamily="{StaticResource PhoneFontFamilyNormal}"
+                            FontSize="{StaticResource PhoneFontSizeNormal}"
+                            Foreground="{StaticResource PhoneForegroundBrush}"
+                            Orientation="Portrait"
+                            Style="{StaticResource PhoneApplicationPageStyle}"
+                            SupportedOrientations="Portrait"
+                            d:DesignHeight="768"
+                            d:DesignWidth="480"
+                            shell:SystemTray.IsVisible="True"
+                            mc:Ignorable="d">
+
+    <i:Interaction.Behaviors>
+        <cimbalinoBehaviors:ApplicationBarBehavior Opacity="0.5">
+            <cimbalinoBehaviors:ApplicationBarIconButton Command="{Binding BetCommand,
+                                                                           Mode=OneTime}"
+                                                         IconUri="/Images/appbar.edittext.rest.png"
+                                                         Text="asda" />
+        </cimbalinoBehaviors:ApplicationBarBehavior>
+    </i:Interaction.Behaviors>
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel x:Name="TitlePanel"
+                    Grid.Row="0"
+                    Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle"
+                       Style="{StaticResource PhoneTextNormalStyle}"
+                       Text="{StaticResource ApplicationTitle}" />
+            <TextBlock x:Name="PageTitle"
+                       Margin="9,-7,0,0"
+                       Style="{StaticResource PhoneTextTitle1Style}"
+                       Text="apostar" />
+        </StackPanel>
+
+        <ScrollViewer x:Name="ContentPanel"
+                      Grid.Row="1"
+                      Margin="12,0,12,0">
+            <StackPanel>
+                <TextBlock Margin="0,0,0,10"
+                           HorizontalAlignment="Center"
+                           Style="{StaticResource PhoneTextTitle2Style}"
+                           Text="números" />
+                <localControls:BettingGrid HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Columns="6"
+                                           MaxNumber="50" />
+                <TextBlock Margin="0,10,0,10"
+                           HorizontalAlignment="Center"
+                           Style="{StaticResource PhoneTextTitle2Style}"
+                           Text="estrelas" />
+                <localControls:BettingGrid HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Columns="3"
+                                           MaxNumber="11" />
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</phone:PhoneApplicationPage>

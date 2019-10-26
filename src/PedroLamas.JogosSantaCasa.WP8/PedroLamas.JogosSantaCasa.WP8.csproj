@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{27BD68A6-E2D3-4B68-B3D8-57E66790E512}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PedroLamas.JogosSantaCasa</RootNamespace>
+    <AssemblyName>PedroLamas.JogosSantaCasa</AssemblyName>
+    <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>PedroLamas.JogosSantaCasa.WP8.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>PedroLamas.JogosSantaCasa.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE;WP8</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\x86\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\x86\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|ARM' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\ARM\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|ARM' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\ARM\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\PedroLamas.JogosSantaCasa.WP7\App.xaml.cs">
+      <Link>App.xaml.cs</Link>
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\PedroLamas.JogosSantaCasa.WP7\Controls\BettingGrid.cs">
+      <Link>Controls\BettingGrid.cs</Link>
+    </Compile>
+    <Compile Include="..\PedroLamas.JogosSantaCasa.WP7\Controls\Clover.cs">
+      <Link>Controls\Clover.cs</Link>
+    </Compile>
+    <Compile Include="..\PedroLamas.JogosSantaCasa.WP7\Controls\LuckyBall.cs">
+      <Link>Controls\LuckyBall.cs</Link>
+    </Compile>
+    <Compile Include="..\PedroLamas.JogosSantaCasa.WP7\Controls\LuckyBallFillMode.cs">
+      <Link>Controls\LuckyBallFillMode.cs</Link>
+    </Compile>
+    <Compile Include="..\PedroLamas.JogosSantaCasa.WP7\Controls\ToggleButton.cs">
+      <Link>Controls\ToggleButton.cs</Link>
+    </Compile>
+    <Compile Include="..\PedroLamas.JogosSantaCasa.WP7\Controls\TotobolaEntry.cs">
+      <Link>Controls\TotobolaEntry.cs</Link>
+    </Compile>
+    <Compile Include="..\PedroLamas.JogosSantaCasa.WP7\Helpers\DataTemplateSelector.cs">
+      <Link>Helpers\DataTemplateSelector.cs</Link>
+    </Compile>
+    <Compile Include="..\PedroLamas.JogosSantaCasa.WP7\Helpers\EventToCommand.cs">
+      <Link>Helpers\EventToCommand.cs</Link>
+    </Compile>
+    <Compile Include="..\PedroLamas.JogosSantaCasa.WP7\Helpers\SantaCasaTemplateSelector.cs">
+      <Link>Helpers\SantaCasaTemplateSelector.cs</Link>
+    </Compile>
+    <Compile Include="..\PedroLamas.JogosSantaCasa.WP7\Model\IJogosSantaCasaService.cs">
+      <Link>Model\IJogosSantaCasaService.cs</Link>
+    </Compile>
+    <Compile Include="..\PedroLamas.JogosSantaCasa.WP7\Model\IMainModel.cs">
+      <Link>Model\IMainModel.cs</Link>
+    </Compile>
+    <Compile Include="..\PedroLamas.JogosSantaCasa.WP7\Model\JogosSantaCasaService.cs">
+      <Link>Model\JogosSantaCasaService.cs</Link>
+    </Compile>
+    <Compile Include="..\PedroLamas.JogosSantaCasa.WP7\Model\MainModel.cs">
+      <Link>Model\MainModel.cs</Link>
+    </Compile>
+    <Compile Include="..\PedroLamas.JogosSantaCasa.WP7\Model\SantaCasaEuromilhoesResult.cs">
+      <Link>Model\SantaCasaEuromilhoesResult.cs</Link>
+    </Compile>
+    <Compile Include="..\PedroLamas.JogosSantaCasa.WP7\Model\SantaCasaGameResult.cs">
+      <Link>Model\SantaCasaGameResult.cs</Link>
+    </Compile>
+    <Compile Include="..\PedroLamas.JogosSantaCasa.WP7\Model\SantaCasaGamesResponse.cs">
+      <Link>Model\SantaCasaGamesResponse.cs</Link>
+    </Compile>
+    <Compile Include="..\PedroLamas.JogosSantaCasa.WP7\Model\SantaCasaGameType.cs">
+      <Link>Model\SantaCasaGameType.cs</Link>
+    </Compile>
+    <Compile Include="..\PedroLamas.JogosSantaCasa.WP7\Model\SantaCasaJokerResult.cs">
+      <Link>Model\SantaCasaJokerResult.cs</Link>
+    </Compile>
+    <Compile Include="..\PedroLamas.JogosSantaCasa.WP7\Model\SantaCasaLotariaEntry.cs">
+      <Link>Model\SantaCasaLotariaEntry.cs</Link>
+    </Compile>
+    <Compile Include="..\PedroLamas.JogosSantaCasa.WP7\Model\SantaCasaLotariaResult.cs">
+      <Link>Model\SantaCasaLotariaResult.cs</Link>
+    </Compile>
+    <Compile Include="..\PedroLamas.JogosSantaCasa.WP7\Model\SantaCasaTotobolaResult.cs">
+      <Link>Model\SantaCasaTotobolaResult.cs</Link>
+    </Compile>
+    <Compile Include="..\PedroLamas.JogosSantaCasa.WP7\Model\SantaCasaTotolotoResult.cs">
+      <Link>Model\SantaCasaTotolotoResult.cs</Link>
+    </Compile>
+    <Compile Include="..\PedroLamas.JogosSantaCasa.WP7\ViewModel\AboutViewModel.cs">
+      <Link>ViewModel\AboutViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\PedroLamas.JogosSantaCasa.WP7\ViewModel\BettingViewModel.cs">
+      <Link>ViewModel\BettingViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\PedroLamas.JogosSantaCasa.WP7\ViewModel\RefreshViewModel.cs">
+      <Link>ViewModel\RefreshViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\PedroLamas.JogosSantaCasa.WP7\ViewModel\ResultsViewModel.cs">
+      <Link>ViewModel\ResultsViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\PedroLamas.JogosSantaCasa.WP7\ViewModel\ViewModelLocator.cs">
+      <Link>ViewModel\ViewModelLocator.cs</Link>
+    </Compile>
+    <Compile Include="..\PedroLamas.JogosSantaCasa.WP7\View\AboutPage.xaml.cs">
+      <Link>View\AboutPage.xaml.cs</Link>
+      <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\PedroLamas.JogosSantaCasa.WP7\View\BettingPage.xaml.cs">
+      <Link>View\BettingPage.xaml.cs</Link>
+      <DependentUpon>BettingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\PedroLamas.JogosSantaCasa.WP7\View\EuromilhoesTabControl.xaml.cs">
+      <Link>View\EuromilhoesTabControl.xaml.cs</Link>
+      <DependentUpon>EuromilhoesTabControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\PedroLamas.JogosSantaCasa.WP7\View\JokerTabControl.xaml.cs">
+      <Link>View\JokerTabControl.xaml.cs</Link>
+      <DependentUpon>JokerTabControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\PedroLamas.JogosSantaCasa.WP7\View\LotariaTabControl.xaml.cs">
+      <Link>View\LotariaTabControl.xaml.cs</Link>
+      <DependentUpon>LotariaTabControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\PedroLamas.JogosSantaCasa.WP7\View\RefreshPage.xaml.cs">
+      <Link>View\RefreshPage.xaml.cs</Link>
+      <DependentUpon>RefreshPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\PedroLamas.JogosSantaCasa.WP7\View\ResultsPage.xaml.cs">
+      <Link>View\ResultsPage.xaml.cs</Link>
+      <DependentUpon>ResultsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\PedroLamas.JogosSantaCasa.WP7\View\TotobolaTabControl.xaml.cs">
+      <Link>View\TotobolaTabControl.xaml.cs</Link>
+      <DependentUpon>TotobolaTabControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\PedroLamas.JogosSantaCasa.WP7\View\TotolotoTabControl.xaml.cs">
+      <Link>View\TotolotoTabControl.xaml.cs</Link>
+      <DependentUpon>TotolotoTabControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="..\PedroLamas.JogosSantaCasa.WP7\App.xaml">
+      <Link>App.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\PedroLamas.JogosSantaCasa.WP7\Themes\Generic.xaml">
+      <Link>Themes\Generic.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\PedroLamas.JogosSantaCasa.WP7\View\AboutPage.xaml">
+      <Link>View\AboutPage.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\PedroLamas.JogosSantaCasa.WP7\View\BettingPage.xaml">
+      <Link>View\BettingPage.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\PedroLamas.JogosSantaCasa.WP7\View\EuromilhoesTabControl.xaml">
+      <Link>View\EuromilhoesTabControl.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\PedroLamas.JogosSantaCasa.WP7\View\JokerTabControl.xaml">
+      <Link>View\JokerTabControl.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\PedroLamas.JogosSantaCasa.WP7\View\LotariaTabControl.xaml">
+      <Link>View\LotariaTabControl.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\PedroLamas.JogosSantaCasa.WP7\View\RefreshPage.xaml">
+      <Link>View\RefreshPage.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\PedroLamas.JogosSantaCasa.WP7\View\ResultsPage.xaml">
+      <Link>View\ResultsPage.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\PedroLamas.JogosSantaCasa.WP7\View\TotobolaTabControl.xaml">
+      <Link>View\TotobolaTabControl.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\PedroLamas.JogosSantaCasa.WP7\View\TotolotoTabControl.xaml">
+      <Link>View\TotolotoTabControl.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\PedroLamas.JogosSantaCasa.WP7\Images\appbar.edittext.rest.png">
+      <Link>Images\appbar.edittext.rest.png</Link>
+    </Content>
+    <Content Include="..\PedroLamas.JogosSantaCasa.WP7\Images\appbar.refresh.rest.png">
+      <Link>Images\appbar.refresh.rest.png</Link>
+    </Content>
+    <Content Include="..\PedroLamas.JogosSantaCasa.WP7\Images\RefreshPageBackground.jpg">
+      <Link>Images\RefreshPageBackground.jpg</Link>
+    </Content>
+    <Content Include="Totojogos_159x159.png" />
+    <Content Include="Totojogos_336x336.png" />
+    <Content Include="Totojogos_691x336.png" />
+    <Content Include="Totojogos_99x99.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Cancel.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Check.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Delete.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Select.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\PedroLamas.ServiceModel\PedroLamas.ServiceModel.WP8\PedroLamas.ServiceModel.WP8.csproj">
+      <Project>{619270AB-E38F-46E5-8222-D08EB06D6869}</Project>
+      <Name>PedroLamas.ServiceModel.WP8</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Cimbalino.Phone.Toolkit">
+      <HintPath>..\packages\Cimbalino.Phone.Toolkit.3.0.0-rc2\lib\wp8\Cimbalino.Phone.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Cimbalino.Phone.Toolkit.Background">
+      <HintPath>..\packages\Cimbalino.Phone.Toolkit.Background.3.0.0-rc2\lib\wp8\Cimbalino.Phone.Toolkit.Background.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras.WP8">
+      <HintPath>..\packages\MvvmLightLibs.4.1.27.0\lib\WindowsPhone8\GalaSoft.MvvmLight.Extras.WP8.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.WP8">
+      <HintPath>..\packages\MvvmLightLibs.4.1.27.0\lib\WindowsPhone8\GalaSoft.MvvmLight.WP8.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.Controls.Toolkit">
+      <HintPath>..\packages\WPtoolkit.4.2012.10.30\lib\wp8\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\packages\MvvmLightLibs.4.1.27.0\lib\WindowsPhone8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.5\lib\portable-net45+wp80+win8\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp.WindowsPhone">
+      <HintPath>..\packages\RestSharp.104.1\lib\sl4-wp71\RestSharp.WindowsPhone.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=3.9.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.4.1.27.0\lib\WindowsPhone8\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+</Project>

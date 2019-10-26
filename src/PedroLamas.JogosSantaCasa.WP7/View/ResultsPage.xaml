@@ -1,0 +1,108 @@
+﻿<phone:PhoneApplicationPage x:Class="PedroLamas.JogosSantaCasa.View.ResultsPage"
+                            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                            xmlns:cimbalinoBehaviors="clr-namespace:Cimbalino.Phone.Toolkit.Behaviors;assembly=Cimbalino.Phone.Toolkit"
+                            xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+                            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                            xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+                            xmlns:localControls="clr-namespace:PedroLamas.JogosSantaCasa.Controls"
+                            xmlns:localHelpers="clr-namespace:PedroLamas.JogosSantaCasa.Helpers"
+                            xmlns:localView="clr-namespace:PedroLamas.JogosSantaCasa.View"
+                            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                            xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+                            xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+                            DataContext="{Binding Results,
+                                                  Source={StaticResource Locator}}"
+                            FontFamily="{StaticResource PhoneFontFamilyNormal}"
+                            FontSize="{StaticResource PhoneFontSizeNormal}"
+                            Foreground="{StaticResource PhoneForegroundBrush}"
+                            Orientation="Portrait"
+                            Style="{StaticResource PhoneApplicationPageStyle}"
+                            SupportedOrientations="Portrait"
+                            d:DesignHeight="768"
+                            d:DesignWidth="480"
+                            shell:SystemTray.IsVisible="True"
+                            mc:Ignorable="d">
+
+    <phone:PhoneApplicationPage.Resources>
+        <DataTemplate x:Key="EuromilhoesTemplate">
+            <localView:EuromilhoesTabControl DataContext="{Binding}" />
+        </DataTemplate>
+
+        <DataTemplate x:Key="JokerTemplate">
+            <localView:JokerTabControl DataContext="{Binding}" />
+        </DataTemplate>
+
+        <DataTemplate x:Key="LotariaTemplate">
+            <localView:LotariaTabControl DataContext="{Binding}" />
+        </DataTemplate>
+
+        <DataTemplate x:Key="TotobolaTemplate">
+            <localView:TotobolaTabControl DataContext="{Binding}" />
+        </DataTemplate>
+
+        <DataTemplate x:Key="TotolotoTemplate">
+            <localView:TotolotoTabControl DataContext="{Binding}" />
+        </DataTemplate>
+    </phone:PhoneApplicationPage.Resources>
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <localHelpers:EventToCommand Command="{Binding PageLoadedCommand, Mode=OneTime}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <i:Interaction.Behaviors>
+        <cimbalinoBehaviors:ApplicationBarBehavior Mode="{Binding ApplicationBarMode}"
+                                                   Opacity="{Binding ApplicationBarOpacity}"
+                                                   StateChangedCommand="{Binding ApplicationBarStateChangedCommand,
+                                                                                 Mode=OneTime}">
+            <cimbalinoBehaviors:ApplicationBarBehavior.MenuItems>
+                <cimbalinoBehaviors:ApplicationBarMenuItem Command="{Binding SendEmailCommand, Mode=OneTime}" Text="enviar por email" />
+                <cimbalinoBehaviors:ApplicationBarMenuItem Command="{Binding SendMessageCommand, Mode=OneTime}" Text="enviar por sms" />
+                <cimbalinoBehaviors:ApplicationBarMenuItem Command="{Binding ShareCommand, Mode=OneTime}" Text="partilhar" />
+                <cimbalinoBehaviors:ApplicationBarMenuItem Command="{Binding RefreshCommand, Mode=OneTime}" Text="refrescar" />
+                <cimbalinoBehaviors:ApplicationBarMenuItem Command="{Binding ShowAboutCommand, Mode=OneTime}" Text="acerca" />
+            </cimbalinoBehaviors:ApplicationBarBehavior.MenuItems>
+        </cimbalinoBehaviors:ApplicationBarBehavior>
+    </i:Interaction.Behaviors>
+
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <controls:Pivot Title="{StaticResource ApplicationTitle}"
+                        ItemsSource="{Binding Results}"
+                        SelectedIndex="{Binding SelectedResultIndex,
+                                                Mode=TwoWay}">
+            <controls:Pivot.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <localControls:Clover Opacity="0.25">
+                            <localControls:Clover.Fill>
+                                <SolidColorBrush Color="{Binding Color}" />
+                            </localControls:Clover.Fill>
+                        </localControls:Clover>
+                        <ScrollViewer VerticalAlignment="Stretch" VerticalContentAlignment="Top">
+                            <localHelpers:SantaCasaTemplateSelector Margin="0,0,0,29"
+                                                                    Content="{Binding}"
+                                                                    EuromilhoesDataTemplate="{StaticResource EuromilhoesTemplate}"
+                                                                    JokerDataTemplate="{StaticResource JokerTemplate}"
+                                                                    LotariaDataTemplate="{StaticResource LotariaTemplate}"
+                                                                    TotobolaDataTemplate="{StaticResource TotobolaTemplate}"
+                                                                    TotolotoDataTemplate="{StaticResource TotolotoTemplate}" />
+                        </ScrollViewer>
+                    </Grid>
+                </DataTemplate>
+            </controls:Pivot.ItemTemplate>
+            <controls:Pivot.HeaderTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding SmallDescription, Converter={StaticResource StringToLowercaseConverter}}" />
+                </DataTemplate>
+            </controls:Pivot.HeaderTemplate>
+        </controls:Pivot>
+    </Grid>
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsMenuEnabled="True"
+                              IsVisible="True"
+                              Mode="Minimized"
+                              Opacity="0.5" />
+    </phone:PhoneApplicationPage.ApplicationBar>
+</phone:PhoneApplicationPage>

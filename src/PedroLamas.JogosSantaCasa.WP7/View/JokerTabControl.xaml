@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="PedroLamas.JogosSantaCasa.View.JokerTabControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+             FontFamily="{StaticResource PhoneFontFamilyNormal}"
+             FontSize="{StaticResource PhoneFontSizeNormal}"
+             Foreground="{StaticResource PhoneForegroundBrush}"
+             d:DesignHeight="480"
+             d:DesignWidth="480"
+             mc:Ignorable="d">
+
+    <StackPanel x:Name="LayoutRoot" toolkit:TiltEffect.SuppressTilt="True">
+        <TextBlock Margin="20"
+                   Style="{StaticResource PhoneTextTitle2Style}"
+                   Text="{Binding Contest}"
+                   TextAlignment="Center" />
+
+        <TextBlock Margin="20"
+                   Style="{StaticResource PhoneTextTitle2Style}"
+                   TextAlignment="Center">
+            Número:
+        </TextBlock>
+
+        <TextBlock Margin="20"
+                   Style="{StaticResource PhoneTextTitle1Style}"
+                   Text="{Binding Result.Number}"
+                   TextAlignment="Center" />
+    </StackPanel>
+</UserControl>
